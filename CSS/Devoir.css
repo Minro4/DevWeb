@@ -10,7 +10,8 @@
     
 
     border-width: 1px;
-    border-style: solid;   
+    border-style: solid; 
+    border-radius: 10px;  
 }
 #Entête h1  {
     font-size: 35px;
