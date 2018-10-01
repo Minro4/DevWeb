@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+#Entête{
+    position: relative;
+    min-height: 170px;
+
+    background-image: url("Image/UQTRLogo.png");
+    background-repeat: no-repeat;
+    background-size:300px;
+    background-position: 2% 50%;
+    
+
+    border-width: 1px;
+    border-style: solid;   
+}
+#Entête h1  {
+    font-size: 35px;
+    font-family: Lobster;
+    position: absolute;
+    bottom: 45px;
+    right: 15px;
+}
