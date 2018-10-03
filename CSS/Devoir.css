@@ -49,3 +49,30 @@ th{
 td:first-child, td:last-child{
     text-align: center;
 }
+.listMenu
+{
+    width: 200px;
+    list-style-type: none;
+    border-style: solid;
+    padding-left: 0;
+    border-radius: 3px;
+    border-width: 0.5px;
+}
+.listMenu li
+{
+    padding: 4px;
+    border-bottom: solid;
+    border-width: 0.5px;
+}
+.listMenu li:hover
+{
+    color: white;
+    font-weight: bold;
+    background-color: black;
+    cursor: pointer;
+
+}
+.listMenu li:last-child
+{
+    border: 0;
+}
