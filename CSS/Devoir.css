@@ -11,7 +11,7 @@
 
     border-width: 1px;
     border-style: solid; 
-    border-radius: 10px;  
+    border-radius: 5px;  
 }
 #Entête h1  {
     font-size: 35px;
@@ -23,7 +23,7 @@
 article{
     border-width:1px;
     border-style:solid;
-    border-radius: 3px;
+    border-radius: 5px;
     padding: 10px;
     width: 84.5%;
     height: 80%;
@@ -37,7 +37,7 @@ table{
     white-space:nowrap;
     border-width:1px;
     border-style:solid;
-    border-radius: 3px;
+    border-radius: 5px;
     border-collapse: collapse;
 }
 td{
