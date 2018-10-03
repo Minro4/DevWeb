@@ -20,3 +20,32 @@
     bottom: 45px;
     right: 15px;
 }
+article{
+    border-width:1px;
+    border-style:solid;
+    border-radius: 3px;
+    padding: 10px;
+}
+table{
+    width: 100%;
+    white-space:nowrap;
+    border-width:1px;
+    border-style:solid;
+    border-radius: 3px;
+    border-collapse: collapse;
+}
+td{
+    border-width:1px;
+    border-style:solid;
+}
+th{
+    border-width:1px;
+    border-style:solid;
+    border-color: black;
+    border-collapse: collapse;
+    color:white;
+    background-color: lightgrey;
+}
+td:first-child, td:last-child{
+    text-align: center;
+}
