@@ -24,7 +24,7 @@ article{
     border-style:solid;
     border-radius: 5px;
     padding: 10px;
-    margin-left: 16%;
+    margin-left: 10.3%;
     margin-top: 1em;
 }
 table{
@@ -52,7 +52,7 @@ td:first-child, td:last-child{
 }
 nav{
     float: left;
-    width: 15%;
+    width: 10%;
 }
 .listMenu
 {
