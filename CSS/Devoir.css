@@ -50,11 +50,12 @@ th{
 td:first-child, td:last-child{
     text-align: center;
 }
-nav{
+nav.listMenu
+{
     float: left;
     width: 11%;
 }
-.listMenu
+.listMenu > ul
 {
     height: 80%;
     list-style-type: none;
@@ -63,12 +64,14 @@ nav{
     border-radius: 3px;
     border-width: 1px;
 }
-.listMenu li
+.listMenu > ul > li
 {
     padding: 4px;
     border-bottom: solid;
     border-width:1px;
+
 }
+
 .listMenu li:hover
 {
     color: white;
@@ -76,7 +79,20 @@ nav{
     background-color: black;
     cursor: pointer;
 }
-.listMenu li:last-child
+
+.listMenu li:hover ul
+{
+    display: block;
+}
+
+.listMenu ul li ul
+{
+    position: absolute;
+    display: none;
+}
+
+
+.listMenu > ul > li:last-child
 {
     border: 0;
 }
