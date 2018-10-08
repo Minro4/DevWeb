@@ -55,13 +55,14 @@ nav.listMenu
     float: left;
     width: 11%;
 }
-.listMenu > ul
+.listMenu ul
 {
     list-style-type: none;
     border-style: solid;
     padding-left: 0;
     border-radius: 3px;
     border-width: 1px;
+    color: black;
 }
 .listMenu li
 {
@@ -86,12 +87,11 @@ nav.listMenu
 
 .listMenu ul li ul
 {
+    left: 5%;
+    font-size: 0.9em;
     display: none;
-    position: relative;
-    color:black;
-    list-style-type: none;
+    position: absolute;
     background-color: white;
-    padding-left: 0;
 }
 
 .listMenu > ul > li:last-child
