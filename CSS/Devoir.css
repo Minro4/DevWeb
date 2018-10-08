@@ -57,19 +57,17 @@ nav.listMenu
 }
 .listMenu > ul
 {
-    height: 80%;
     list-style-type: none;
     border-style: solid;
     padding-left: 0;
     border-radius: 3px;
     border-width: 1px;
 }
-.listMenu > ul > li
+.listMenu li
 {
     padding: 4px;
     border-bottom: solid;
     border-width:1px;
-
 }
 
 .listMenu li:hover
@@ -83,16 +81,24 @@ nav.listMenu
 .listMenu li:hover ul
 {
     display: block;
+
 }
 
 .listMenu ul li ul
 {
-    position: absolute;
     display: none;
+    position: relative;
+    color:black;
+    list-style-type: none;
+    background-color: white;
+    padding-left: 0;
 }
 
-
 .listMenu > ul > li:last-child
+{
+    border: 0;
+}
+.listMenu > ul > li > ul > li:last-child
 {
     border: 0;
 }
