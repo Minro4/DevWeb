@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
-/* Début entête */
+/*------------------------- Début entête -------------------------*/
 #Entête{
     position: relative;
     min-height: 170px;
@@ -14,7 +14,7 @@
     border-style: solid; 
     border-radius: 5px;  
 }
-    /* Titre de l'entête */
+/* Titre de l'entête */
 #Entête h1  {
     font-size: 35px;
     font-family: Lobster;
@@ -22,9 +22,9 @@
     margin-right: 0.5em;
     margin-top: 1.5em;
 }
-/* Fin entête */
+/*------------------------- Fin entête -------------------------*/
 
-/* Début contenu */
+/*------------------------- Début contenu -------------------------*/
 article{
     border-width:1px;
     border-style:solid;
@@ -53,13 +53,13 @@ th{
     color:white;
     background-color: lightgrey;
 }
-    /* Aligne le numéro des activités et le nombre d'inscrit */
+/* Aligne le numéro des activités et le nombre d'inscrit */
 td:first-child, td:last-child{
     text-align: center;
 }
-/* Fin contenu */
+/*------------------------- Fin contenu -------------------------*/
 
-/* Début menu */
+/*------------------------- Début menu -------------------------*/
 nav.listMenu
 {
     float: left;
@@ -81,6 +81,7 @@ nav.listMenu
     border-width:1px;
 }
 
+/* Quand la souris passe sur un item du menu*/
 .listMenu li:hover
 {
     color: white;
@@ -88,13 +89,13 @@ nav.listMenu
     background-color: black;
     cursor: pointer;
 }
-
+/* Affiche le sous-menu */
 .listMenu li:hover ul
 {
     display: inline;
 }
 
-    /* Sous-menu */
+/* Sous-menu */
 .listMenu ul li ul
 {
     font-size: 0.9em;
@@ -113,4 +114,4 @@ nav.listMenu
 {
     border: 0;
 }
-/* Fin menu */
+/*------------------------- Fin menu -------------------------*/
