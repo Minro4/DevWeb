@@ -50,18 +50,19 @@ th{
 td:first-child, td:last-child{
     text-align: center;
 }
-nav{
+nav.listMenu
+{
     float: left;
     width: 11%;
 }
-.listMenu
+.listMenu ul
 {
-    height: 80%;
     list-style-type: none;
     border-style: solid;
     padding-left: 0;
     border-radius: 3px;
     border-width: 1px;
+    color: black;
 }
 .listMenu li
 {
@@ -69,6 +70,7 @@ nav{
     border-bottom: solid;
     border-width:1px;
 }
+
 .listMenu li:hover
 {
     color: white;
@@ -76,7 +78,27 @@ nav{
     background-color: black;
     cursor: pointer;
 }
-.listMenu li:last-child
+
+.listMenu li:hover ul
+{
+    display: block;
+
+}
+
+.listMenu ul li ul
+{
+    left: 5%;
+    font-size: 0.9em;
+    display: none;
+    position: absolute;
+    background-color: white;
+}
+
+.listMenu > ul > li:last-child
+{
+    border: 0;
+}
+.listMenu > ul > li > ul > li:last-child
 {
     border: 0;
 }
