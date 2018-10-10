@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
 /*------------------------- Début entête -------------------------*/
-#Entête{
+Header{
     position: relative;
     min-height: 170px;
 
@@ -15,7 +15,7 @@
     border-radius: 5px;  
 }
 /* Titre de l'entête */
-#Entête h1  {
+Header h1  {
     font-size: 35px;
     font-family: Lobster;
     float: right;
