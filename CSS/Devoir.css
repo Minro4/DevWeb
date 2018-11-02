@@ -52,7 +52,9 @@ th{
     border-collapse: collapse;
     color:white;
     background-color: lightgrey;
+    cursor:pointer;
 }
+
 /* Aligne le numéro des activités et le nombre d'inscrit */
 td:first-child, td:last-child{
     text-align: center;
