@@ -3,19 +3,19 @@ var data=[{"#":1,"Activité":"Natation","Responsable":"Michel Provencher","Nombr
 			  {"#":3,"Activité":"Randonnée","Responsable":"Catherine Pelletier","Nombre d'inscrits":10},
 			  {"#":4,"Activité":"Kayak","Responsable":"Josée Coté","Nombre d'inscrits":14},
 			  {"#":5,"Activité":"Velo","Responsable":"Jean-Yves Surroy","Nombre d'inscrits":22},
-              {"#":6,"Activité":"Echecs","Responsable":"Emilie Simard","Nombre d'inscrits":11}];
+        {"#":6,"Activité":"Echecs","Responsable":"Emilie Simard","Nombre d'inscrits":11}];
 
 var table;
 
 
 $(document).ready(function() {
-    fillTable();
+  createFillTable();
     $("th").click(function() {
         sortTable(event.target.x);
       });
 });
 
-function fillTable(){
+function createFillTable(){
         //ajoute les propriétés de data 
         var col = [];
         for (var i = 0; i < data.length; i++) {
@@ -55,6 +55,26 @@ function fillTable(){
         divContainer.innerHTML = "";
         divContainer.appendChild(table);
 }
+//Début des fonctions inutiles
+function removeTable(){
+  $("table").remove();
+}
+function unfillTable(){
+  var tableData = $("TD");
+  for (var i = 0; i < tableData.length; i++) {
+    tableData[i].innerHTML = "";
+  }
+}
+function fillTable(){
+
+  var rows = table.rows;
+  for (var i = 0; i < table.length; i++) {
+    for (var j = 0; j < table[i].length; j++) {
+      rows[i].getElementsByTagName("TD")[j].innerHTML = data[i][j];     
+    }
+  }
+}
+//fin des fonctions inutiles
 function sortTable(n) {
     var rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
     switching = true;
