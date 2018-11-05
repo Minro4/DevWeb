@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title> "Devoir"</title>
-    <link rel="stylesheet" href="CSS/Devoir.css" type="text/css" />
-    <script type="text/javascript" src=" http://code.jquery.com/jquery.min.js">  </script>
-    <script src="javascript/accueil.js">	</script>
+    <link rel="stylesheet" href="src/CSS/Devoir.css" type="text/css" />
+    <script type ="text/javascript" src=" http://code.jquery.com/jquery.min.js">  </script>
+    <script src = "src/javascript/accueil.js">	</script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvRPJsEiFbZCDmOHDDTTjQuXeRB1mUEQQ&callback=initMap">
+    </script>
 </head>
 
 <body>
@@ -14,32 +17,31 @@
         <!-------L'entête------->
         <h1>Loisir pour les étudiants !</h1>
     </Header>
-    <nav class="listMenu">
-        <!-------Menu de navigation------->
-        <ul>
-            <li>Accueil
-                <ul>
-                    <li>item 1 section 1</li>
-                    <li>item 2 section 1</li>
-                </ul>
-            </li>
-            <li>S'inscire
-                <ul>
-                    <li>item 1 section 2</li>
-                    <li>item 2 section 2</li>
-                </ul>
-            </li>
-            <li>Localiser une activité
-                <ul>
-                    <li>item 1 section 3</li>
-                    <li>item 2 section 3</li>
-                </ul>
-            </li>
-        </ul>
+    <nav class="listMenu">   <!-------Menu de navigation------->
+            <ul>
+                <li onclick="affichage('accueil')">Accueil
+                    <ul>
+                        <li>item 1 section 1</li>
+                        <li>item 2 section 1</li>
+                    </ul>
+                </li>
+                <li onclick="affichage('inscrire')">S'inscire
+                    <ul>
+                        <li>item 1 section 2</li>
+                        <li>item 2 section 2</li>
+                    </ul>
+                </li>
+                <li onclick="affichage('carte')">Localiser une activité
+                    <ul>
+                        <li>item 1 section 3</li>
+                        <li>item 2 section 3</li>
+                    </ul>
+                </li>
+            </ul>
     </nav>
     <!------- Contenu ------->
-    <article>
-        <!--Accueil-->
+    <article id = "accueil">
+        <!--Description du but et de comment s'inscrire-->
         <section>
             <h1>Notre but:</h1>
             <p>
@@ -64,6 +66,12 @@
             <div id="table"> </div>
         </section>
     </article>
+    <!--Début carte-->
+    <article id = "carte">
+        <h1>Où nous trouver :</h1>
+        <figure id = "map"></figure>
+    </article>
+    <!--fin carte-->
         <!--Inscription-->
     <article>
         <form>
