@@ -119,7 +119,8 @@ nav.listMenu
 /*------------------------- Fin menu de navigation -------------------------*/
 /*------------------------- Début formulaire -------------------------*/
 form{
-    width: 50%;
+    width: 60%;
+    display:none;
 }
 form li{
     display: flex;
