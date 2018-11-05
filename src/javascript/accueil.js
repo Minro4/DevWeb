@@ -97,6 +97,27 @@ function sortData(a, colIndex){
   return a;
 }
 
+function affichage(affiche){
+    if(affiche == "accueil"){
+        $("article").css({"display" : "none"});
+        $("#accueil").css({"display" : "block"});
+    }
+    if(affiche =="inscrire"){
+        $("article").css({"display" : "none"});
+    }
+    if(affiche == "carte"){
+        $("article").css({"display" : "none"});
+        $("#carte").css({"display" : "block"});
+    }
+}
+
+//Début carte
+function initMap() {
+    var uluru = {lat: -25.344, lng: 131.036};
+    var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: uluru});
+    var marker = new google.maps.Marker({position: UQTR, map: map});
+}
+//Fin carte
 
 //Début des fonctions inutiles
 function removeTable(){
@@ -108,5 +129,4 @@ function unfillTable(){
     tableData[i].innerHTML = "";
   }
 }
-
 //fin des fonctions inutiles
