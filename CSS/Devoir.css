@@ -120,7 +120,6 @@ nav.listMenu
 /*------------------------- Début formulaire -------------------------*/
 form{
     width: 60%;
-    display:none;
 }
 form li{
     display: flex;
