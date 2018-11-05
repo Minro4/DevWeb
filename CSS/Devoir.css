@@ -24,7 +24,7 @@ Header h1  {
 }
 /*------------------------- Fin entête -------------------------*/
 
-/*------------------------- Début contenu -------------------------*/
+/*------------------------- Début Accueil -------------------------*/
 article{
     border-width:1px;
     border-style:solid;
@@ -59,9 +59,9 @@ th{
 td:first-child, td:last-child{
     text-align: center;
 }
-/*------------------------- Fin contenu -------------------------*/
+/*------------------------- Fin Accueil -------------------------*/
 
-/*------------------------- Début menu -------------------------*/
+/*------------------------- Début menu de navigation -------------------------*/
 nav.listMenu
 {
     float: left;
@@ -116,4 +116,29 @@ nav.listMenu
 {
     border: 0;
 }
-/*------------------------- Fin menu -------------------------*/
+/*------------------------- Fin menu de navigation -------------------------*/
+/*------------------------- Début formulaire -------------------------*/
+form{
+    width: 50%;
+}
+form li{
+    display: flex;
+    justify-content: flex-start;
+    padding: .5em;
+}
+form label {
+    padding: .5em 1em .5em 0;
+    flex: 1;
+  }
+form input,
+form select,
+form textarea {
+    flex: 1;
+  }
+form input,
+form button,
+form select,
+form textarea{
+    padding: .5em;
+  }
+/*------------------------- Fin formulaire -------------------------*/
