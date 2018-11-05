@@ -140,5 +140,8 @@ form button,
 form select,
 form textarea{
     padding: .5em;
-  }
+}
+form button{
+    margin-right: 15px;
+}
 /*------------------------- Fin formulaire -------------------------*/

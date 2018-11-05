@@ -1,9 +1,9 @@
-var data=[{"#":1,"Activité":"Natation","Responsable":"Michel Provencher","Nombredinscrits":7},
-			  {"#":2,"Activité":"Badminton","Responsable":"Daniel Lefevbre","Nombredinscrits":15},
-			  {"#":3,"Activité":"Randonnée","Responsable":"Catherine Pelletier","Nombredinscrits":10},
-			  {"#":4,"Activité":"Kayak","Responsable":"Josée Coté","Nombredinscrits":14},
-			  {"#":5,"Activité":"Velo","Responsable":"Jean-Yves Surroy","Nombredinscrits":22},
-        {"#":6,"Activité":"Echecs","Responsable":"Emilie Simard","Nombredinscrits":11}];
+var data=[{"#":1,"Activité":"Natation","Responsable":"Michel Provencher","Nombre d'inscrits":7},
+			  {"#":2,"Activité":"Badminton","Responsable":"Daniel Lefevbre","Nombre d'inscrits":15},
+			  {"#":3,"Activité":"Randonnée","Responsable":"Catherine Pelletier","Nombre d'inscrits":10},
+			  {"#":4,"Activité":"Kayak","Responsable":"Josée Coté","Nombre d'inscrits":14},
+			  {"#":5,"Activité":"Velo","Responsable":"Jean-Yves Surroy","Nombre d'inscrits":22},
+        {"#":6,"Activité":"Echecs","Responsable":"Emilie Simard","Nombre d'inscrits":11}];
 
 var table;
 var col;
