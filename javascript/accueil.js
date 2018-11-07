@@ -104,6 +104,7 @@ function affichage(affiche){
     }
     if(affiche =="inscrire"){
         $("article").css({"display" : "none"});
+        $("#inscription").css({"display" : "block"});
     }
     if(affiche == "carte"){
         $("article").css({"display" : "none"});

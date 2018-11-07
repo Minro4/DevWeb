@@ -73,51 +73,43 @@
     </article>
     <!--fin carte-->
         <!--Inscription-->
-    <article>
+    <article id = "inscription">
         <form>
-            <ul>
-                <li><label>Nom</label>
-                    <input type="text" name="Nom" size="20" placeholder="Votre nom ici">
-                </li>
-                <li>
-                    <label>Prénom</label>
-                    <input type="text" name="Nom" size="20" placeholder="Votre prénom ici">
-                </li>
-                <li>
-                <label>Date de naissance</label>
-                <input type="text" name="Nom" size="20" placeholder="aaaa-mm-jj">
-                </li>
-                <li>
-                    <label>Sexe</label>
-                    <input type="radio" name="sexe" checked="checked" value="Masculin" /> Masculin :
-                    <input type="radio" name="sexe" value="Feminin" />Féminin :
-                </li>
-                <li>
-                    <label>Activité</label>
-                    <select name="age">
-                        <option value="Randonnée">Randonnée</option>
-                        <option value="Badminton">Badminton</option>
-                        <option value="Echecs">Echecs</option>
-                        <option value="Velo">Velo</option>
-                        <option value="Kayak">Kayak</option>
-                        <option value="Natation">Natation</option>
-                    </select>
-                </li>
-                <li>
-                    <label>Motivation</label>
-                    <textarea rows="8" cols="50" name="motivation">
-            </textarea>
-                </li>
-                <li> <button type="Réinitialiser">Réinitialiser</button>
-                    <button type="Valider">Valider</button>
-                </li>
-            </li>
-
-            </ul>
-
-
-
-
+            <h1>Inscrivez vous</h1>
+            <p>
+                <label for = "n">Nom: </label>
+                <input type="text" name="nom" id="n"  size="20"/>
+            </p>
+            <p>
+                <label for = "p">Prénom: </label>
+                <input type="text" name="prenom" id="p"  size="20"/>
+            </p>
+            <p>
+                <label for = "dn">Date de naissance: </label>
+                <input type="date" name="date" id="dn"  size="20"/>
+            </p>
+            <p>
+                <label for = "sg">Sexe: </label>
+                <input type="radio" name="sexe" id="sg" value = "Homme"/>Homme
+                <input type="radio" name="sexe" id="sf" value = "Femme"/>Femme
+            </p>
+            <p>
+                <label for = "sel">Activité</label>
+                <select name ="Activité" id="sel">
+                    <option value = "natation">Natation</option>
+                    <option value = "badminton">Batminton</option>
+                    <option value= "randonnee">Rendonnée</option>
+                    <option value = "kayak">Kayak</option>
+                    <option value = "velo">Velo</option>
+                    <option value = "echecs">Echecs</option>
+                </select>
+            </p>
+            <p>
+                <label for = "motiv">Motivation: </label>
+                <textarea value = "comments" id="motiv" rows ="4" cols = "50" placeholder="Facultatif"></textarea>
+            </p>
+            <input type ="submit"/>
+            <input type ="reset"/>
         </form>
     </article>
 
