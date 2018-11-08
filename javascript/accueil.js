@@ -1,20 +1,22 @@
-var data=[{"#":1,"Activité":"Natation","Responsable":"Michel Provencher","Nombre d'inscrits":7},
-			  {"#":2,"Activité":"Badminton","Responsable":"Daniel Lefevbre","Nombre d'inscrits":15},
-			  {"#":3,"Activité":"Randonnée","Responsable":"Catherine Pelletier","Nombre d'inscrits":10},
-			  {"#":4,"Activité":"Kayak","Responsable":"Josée Coté","Nombre d'inscrits":14},
-			  {"#":5,"Activité":"Velo","Responsable":"Jean-Yves Surroy","Nombre d'inscrits":22},
-        {"#":6,"Activité":"Echecs","Responsable":"Emilie Simard","Nombre d'inscrits":11}];
-
+var data=[{"order":1,"activity":"Natation","manager":"Michel Provencher","numofsub":7},
+{"order":2,"activity":"Badminton","manager":"Daniel Lefevbre","numofsub":15},
+{"order":3,"activity":"Randonnée","manager":"Catherine Pelletier","numofsub":10},
+{"order":4,"activity":"Kayak","manager":"Josée Coté","numofsub":14},
+{"order":5,"activity":"Velo","manager":"Jean-Yves Surroy","numofsub":22},
+{"order":6,"activity":"Echecs","manager":"Emilie Simard","numofsub":11}];
 var table;
 var col;
 
 $(document).ready(function() {
   createFillTable();
-    $("th").click(function() {
+    $("th").on('click', function() {
         sortData(data,event.target.x);
         fillTable();
       });
-});
+    $("#accueilMenu,#inscrireMenu,#carteMenu").click(function(event) {
+        affichage(event.target.id);
+      });
+
 
 function createFillTable(){
         //ajoute les propriétés de data 
@@ -26,25 +28,12 @@ function createFillTable(){
                 }
             }
         }
-
-        // Créer la table
-        table = document.createElement("table");
-
-        // Ajoute les tables headers
-        var tr = table.insertRow(-1);                   // Ajoute une row
-
-        for (var i = 0; i < col.length; i++) {
-            var th = document.createElement("th");      // Créé les table headers
-            th.innerHTML =  col[i];
-            th.x = i;
-            tr.appendChild(th);
-        }
-
+        table = $("table");
         // Ajoute l'information de data
         for (var i = 0; i < data.length; i++) {     //loop dans toutes les rows
 
             tr = table.insertRow(-1);
-
+            
             for (var j = 0; j < col.length; j++) {  //loop dans touts les colonnes
                 var tabCell = tr.insertCell(-1);
                 tabCell.innerHTML = data[i][col[j]];
@@ -98,27 +87,19 @@ function sortData(a, colIndex){
 }
 
 function affichage(affiche){
-    if(affiche == "accueil"){
+    if(affiche == "accueilMenu"){
         $("article").css({"display" : "none"});
         $("#accueil").css({"display" : "block"});
     }
-    if(affiche =="inscrire"){
+    if(affiche =="inscrireMenu"){
         $("article").css({"display" : "none"});
         $("#inscription").css({"display" : "block"});
     }
-    if(affiche == "carte"){
+    if(affiche == "carteMenu"){
         $("article").css({"display" : "none"});
         $("#carte").css({"display" : "block"});
     }
 }
-
-//Début carte
-function initMap() {
-    var uluru = {lat: -25.344, lng: 131.036};
-    var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: uluru});
-    var marker = new google.maps.Marker({position: UQTR, map: map});
-}
-//Fin carte
 
 //Début des fonctions inutiles
 function removeTable(){
@@ -131,3 +112,4 @@ function unfillTable(){
   }
 }
 //fin des fonctions inutiles
+});
