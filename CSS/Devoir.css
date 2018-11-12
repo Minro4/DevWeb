@@ -127,6 +127,13 @@ nav.listMenu
 {
     border: 0;
 }
+
+.selected
+{
+    color: white;
+    font-weight: bold;
+    background-color: black;
+}
 /*------------------------- Fin menu -------------------------*/
 
 #map{
