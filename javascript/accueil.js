@@ -14,6 +14,38 @@ $(document).ready(function() {
         sortData(data,event.target.x);
         fillTable();
       });
+
+    //vef de submit
+   $("form").submit(function(event)
+    {
+        var xd = $("input");
+        var prob = "LES CHAMPS OBLIGATOIRES CI-DESSOUS N'ONT PAS ÉTÉ REMPLIS\n";
+        var problem;
+
+        for(var i = 0; i < 3;i++)
+        {
+            if(xd[i].value === '')
+            {
+                problem = true;
+                if(i==0)
+                    prob += "Le nom\n";
+                else if(i == 1)
+                    prob+= "Le prenom\n";
+                else
+                    prob+= "La date"
+            }
+        }
+        if(problem)
+        {
+            alert(prob);
+            event.preventDefault();
+        }
+        else
+            alert("Le formualaire a bien été remplis...")
+
+
+
+    });
 });
 
 function createFillTable(){
@@ -111,6 +143,8 @@ function affichage(affiche){
         $("#carte").css({"display" : "block"});
     }
 }
+
+
 
 //Début carte
 function initMap() {
