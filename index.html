@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="CSS/Devoir.css" type="text/css" />
     <script type ="text/javascript" src=" http://code.jquery.com/jquery.min.js">  </script>
     <script src = "javascript/accueil.js">	</script>
+    <script src = "javascript/carte.js">	</script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvRPJsEiFbZCDmOHDDTTjQuXeRB1mUEQQ&callback=initMap">
     </script>
@@ -19,19 +20,19 @@
     </Header>
     <nav class="listMenu">   <!-------Menu de navigation------->
             <ul>
-                <li onclick="affichage('accueil')">Accueil
+                <li id = "accueilMenu">Accueil
                     <ul>
                         <li>item 1 section 1</li>
                         <li>item 2 section 1</li>
                     </ul>
                 </li>
-                <li onclick="affichage('inscrire')">S'inscire
+                <li id = "inscrireMenu">S'inscire
                     <ul>
                         <li>item 1 section 2</li>
                         <li>item 2 section 2</li>
                     </ul>
                 </li>
-                <li onclick="affichage('carte')">Localiser une activité
+                <li id = "carteMenu">Localiser une activité
                     <ul>
                         <li>item 1 section 3</li>
                         <li>item 2 section 3</li>
@@ -63,7 +64,15 @@
         <!--Tableau des activités, des responsables et du nombre de personnes inscrites.-->
         <section>
             <h1>Liste des activités disponibles :</h1>
-            <div id="table"> </div>
+            <table>
+                <tr>
+                    <!--ligne 1 (titres des colonnes)-->
+                    <th>#</th>
+                    <th>Activité</th>
+                    <th>Responsable</th>
+                    <th>Nombre d'inscrits</th>
+                </tr>
+            </table>
         </section>
     </article>
     <!--Début carte-->
