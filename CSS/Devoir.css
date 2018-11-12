@@ -59,6 +59,13 @@ th{
     cursor:pointer;
 }
 
+form > div > label
+{
+    display: inline-block;
+    width: 100px;
+    padding-bottom: 10px;
+}
+
 /* Aligne le numéro des activités et le nombre d'inscrit */
 td:first-child, td:last-child{
     text-align: center;
