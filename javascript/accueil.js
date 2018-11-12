@@ -1,74 +1,68 @@
-var data=[{"#":1,"Activité":"Natation","Responsable":"Michel Provencher","Nombre d'inscrits":7},
-			  {"#":2,"Activité":"Badminton","Responsable":"Daniel Lefevbre","Nombre d'inscrits":15},
-			  {"#":3,"Activité":"Randonnée","Responsable":"Catherine Pelletier","Nombre d'inscrits":10},
-			  {"#":4,"Activité":"Kayak","Responsable":"Josée Coté","Nombre d'inscrits":14},
-			  {"#":5,"Activité":"Velo","Responsable":"Jean-Yves Surroy","Nombre d'inscrits":22},
-        {"#":6,"Activité":"Echecs","Responsable":"Emilie Simard","Nombre d'inscrits":11}];
-
+var data=[{"order":1,"activity":"Natation","manager":"Michel Provencher","numofsub":7},
+{"order":2,"activity":"Badminton","manager":"Daniel Lefevbre","numofsub":15},
+{"order":3,"activity":"Randonnée","manager":"Catherine Pelletier","numofsub":10},
+{"order":4,"activity":"Kayak","manager":"Josée Coté","numofsub":14},
+{"order":5,"activity":"Velo","manager":"Jean-Yves Surroy","numofsub":22},
+{"order":6,"activity":"Echecs","manager":"Emilie Simard","numofsub":11}];
 var table;
-var col;
 
 $(document).ready(function() {
-  createFillTable();
-    $("th").click(function() {
-        sortData(data,event.target.x);
+    table = $("table");
+    fillTable();
+    $("th").click( function() {
+        sortData(data,event.target.cellIndex);
+        $("tr:not(tr:first-child)").remove(); //Enlève toutes les rows sauf la première
         fillTable();
       });
-});
+    $("#accueilMenu,#inscrireMenu,#carteMenu").click(function(event) {
+        affichage(event.target.id);
+      });
+         //vef de submit
+   $("form").submit(function(event)
+   {
+       var xd = $("input");
+       var prob = "LES CHAMPS OBLIGATOIRES CI-DESSOUS N'ONT PAS ÉTÉ REMPLIS\n";
+       var problem;
 
-function createFillTable(){
-        //ajoute les propriétés de data 
-        col = [];
-        for (var i = 0; i < data.length; i++) {
-            for (var key in data[i]) {
-                if (col.indexOf(key) === -1) {
-                    col.push(key);
-                }
-            }
-        }
+       for(var i = 0; i < 3;i++)
+       {
+           if(xd[i].value === '')
+           {
+               problem = true;
+               if(i==0)
+                   prob += "Le nom\n";
+               else if(i == 1)
+                   prob+= "Le prenom\n";
+               else
+                   prob+= "La date"
+           }
+       }
+       if(problem)
+       {
+           alert(prob);
+           event.preventDefault();
+       }
+       else
+           alert("Le formualaire a bien été remplis...")
 
-        // Créer la table
-        table = document.createElement("table");
 
-        // Ajoute les tables headers
-        var tr = table.insertRow(-1);                   // Ajoute une row
 
-        for (var i = 0; i < col.length; i++) {
-            var th = document.createElement("th");      // Créé les table headers
-            th.innerHTML =  col[i];
-            th.x = i;
-            tr.appendChild(th);
-        }
+   });
 
-        // Ajoute l'information de data
+
+function fillTable(){     
         for (var i = 0; i < data.length; i++) {     //loop dans toutes les rows
-
-            tr = table.insertRow(-1);
-
-            for (var j = 0; j < col.length; j++) {  //loop dans touts les colonnes
-                var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = data[i][col[j]];
-            }
+            tr = table.append("<tr><td>"+ data[i]["order"] +"</td><td>"+ data[i]["activity"] +"</td><td>"+ data[i]["manager"] +"</td><td>"+ data[i]["numofsub"] +"</td></tr>");
         }
-
-        // Ajoute la table au document HTML
-        var divContainer = document.getElementById("table");
-        divContainer.innerHTML = "";
-        divContainer.appendChild(table);
-}
-
-function fillTable(){
-  // Ajoute l'information de data
-  for (var i = 0; i < data.length; i++) {     //loop dans toutes les rows
-     for (var j = 0; j < col.length; j++) {  //loop dans touts les colonnes
-         table.rows[i+1].getElementsByTagName("TD")[j].innerHTML = data[i][col[j]];
-     }
- }
 }
 
 var lastCol = 0;    //se souvient de la dernière colonne qui à été mis en ordre
 function sortData(a, colIndex){
-  if (colIndex === lastCol){    //si on a clické 2 fois sur la même colonne, on les met en ordre descendant
+    if (data.length == 0) 
+        return;
+
+    var key =  Object.keys(data[0])[colIndex];  //Permet d'avoir le nom de la propriété que l'utilisateur souhaite ordonner
+    if (colIndex === lastCol){    //si on a clické 2 fois sur la même colonne, on les met en ordre descendant
       a.sort(sortFunctionDesc);
       lastCol = -1;
     }
@@ -76,21 +70,21 @@ function sortData(a, colIndex){
       a.sort(sortFunctionAsc);
       lastCol = colIndex;
     }
- 
+
   function sortFunctionAsc(a, b) {
-      if (a[col[colIndex]] === b[col[colIndex]]) {
+      if (a[key] === b[key]) {
           return 0;
       }
       else {
-          return (a[col[colIndex]] < b[col[colIndex]]) ? -1 : 1;         
+          return (a[key] < b[key]) ? -1 : 1;         
       }
   }
   function sortFunctionDesc(a, b) {
-    if (a[col[colIndex]] === b[col[colIndex]]) {
+    if (a[key] === b[key]) {
         return 0;
     }
     else {
-        return (a[col[colIndex]] < b[col[colIndex]]) ? 1 : -1;
+        return (a[key] < b[key]) ? 1 : -1;
     }
 }
 
@@ -98,36 +92,17 @@ function sortData(a, colIndex){
 }
 
 function affichage(affiche){
-    if(affiche == "accueil"){
+    if(affiche == "accueilMenu"){
         $("article").css({"display" : "none"});
         $("#accueil").css({"display" : "block"});
     }
-    if(affiche =="inscrire"){
+    if(affiche =="inscrireMenu"){
         $("article").css({"display" : "none"});
         $("#inscription").css({"display" : "block"});
     }
-    if(affiche == "carte"){
+    if(affiche == "carteMenu"){
         $("article").css({"display" : "none"});
         $("#carte").css({"display" : "block"});
     }
 }
-
-//Début carte
-function initMap() {
-    var uluru = {lat: -25.344, lng: 131.036};
-    var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: uluru});
-    var marker = new google.maps.Marker({position: UQTR, map: map});
-}
-//Fin carte
-
-//Début des fonctions inutiles
-function removeTable(){
-  $("table").remove();
-}
-function unfillTable(){
-  var tableData = $("TD");
-  for (var i = 0; i < tableData.length; i++) {
-    tableData[i].innerHTML = "";
-  }
-}
-//fin des fonctions inutiles
+});
