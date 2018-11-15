@@ -13,6 +13,7 @@ Header{
     border-width: 1px;
     border-style: solid; 
     border-radius: 5px;  
+    margin-bottom: 1em;
 }
 /* Titre de l'entête */
 Header h1  {
@@ -31,7 +32,6 @@ article{
     border-radius: 5px;
     padding: 10px;
     margin-left: 11.5%;
-    margin-top: 1em;
     display : none;
 }
 article:first-of-type{
@@ -77,6 +77,7 @@ nav.listMenu
 {
     float: left;
     width: 11%;
+    margin-top: -1em;
 }
 .listMenu ul
 {
