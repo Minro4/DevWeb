@@ -9,14 +9,22 @@ var table;
 $(document).ready(function() {
     table = $("table");
     fillTable();
-    $("th").click( function() {
+
+    $("th").click( function() { //Quand tu click sur une des colonnes de la table
         sortData(data,event.target.cellIndex);
         $("tr:not(tr:first-child)").remove(); //Enlève toutes les rows sauf la première
         fillTable();
       });
-    $("#accueilMenu,#inscrireMenu,#carteMenu").click(function(event) {
+
+    $("#accueilMenu,#inscrireMenu,#carteMenu").click(function(event) {  //Quand tu click sur un boutton du menu
         affichage(event.target.id);
       });
+
+    $("li").click(function(){   //Quand tu click sur un des éléments du menu ajoute la classe selected et l'enlève aux autres éléments du menu
+        $("li").removeClass("selected");
+        $(this).addClass("selected");
+    });
+
          //vef de submit
     $("form").submit(function(event)
    {
@@ -36,7 +44,7 @@ $(document).ready(function() {
                else
                    prob+= "La date"
            }
-       }
+        }
        if(problem)
        {
            alert(prob);
@@ -49,13 +57,14 @@ $(document).ready(function() {
 
    });
 
-
+    //Fonction qui remplit la table en fonction de la variable data
     function fillTable(){
             for (var i = 0; i < data.length; i++) {     //loop dans toutes les rows
                 tr = table.append("<tr><td>"+ data[i]["order"] +"</td><td>"+ data[i]["activity"] +"</td><td>"+ data[i]["manager"] +"</td><td>"+ data[i]["numofsub"] +"</td></tr>");
             }
     }
 
+    //Fonction qui s'occupe de tri le tableau data en fonction de la colonne
     var lastCol = 0;    //se souvient de la dernière colonne qui à été mis en ordre
     function sortData(a, colIndex){
         if (data.length == 0)
@@ -71,7 +80,7 @@ $(document).ready(function() {
           lastCol = colIndex;
         }
 
-      function sortFunctionAsc(a, b) {
+      function sortFunctionAsc(a, b) {  //sort ascendant
           if (a[key] === b[key]) {
               return 0;
           }
@@ -79,7 +88,7 @@ $(document).ready(function() {
               return (a[key] < b[key]) ? -1 : 1;
           }
       }
-      function sortFunctionDesc(a, b) {
+      function sortFunctionDesc(a, b) { //sort descendant
         if (a[key] === b[key]) {
             return 0;
         }
@@ -91,11 +100,6 @@ $(document).ready(function() {
       return a;
     }
 
-
-    $("li").click(function(){
-        $("li").removeClass("selected");
-        $(this).addClass("selected");
-    });
     function affichage(affiche){
         if(affiche == "accueilMenu" && $("#accueil").is(":hidden")){
             $("article:visible").slideUp(function(){
