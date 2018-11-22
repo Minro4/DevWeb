@@ -66,6 +66,11 @@ form > div > label
     padding-bottom: 10px;
 }
 
+form div textarea
+{
+    vertical-align: top;
+}
+
 /* Aligne le numéro des activités et le nombre d'inscrit */
 td:first-child, td:last-child{
     text-align: center;

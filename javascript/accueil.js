@@ -28,13 +28,18 @@ $(document).ready(function() {
     //Fait la vérification du form
     $("form").submit(function(event)
    {
-       var xd = $("input");
+       //Tableau des inputs du form
+       var tabInput = $("input");
+       //String qui avertit l'utilisateur des erreurs commises
        var prob = "LES CHAMPS OBLIGATOIRES CI-DESSOUS N'ONT PAS ÉTÉ REMPLIS\n";
+       //Boolean verifiant s'il y a un probleme
        var problem;
 
+       //Boucle qui verifie les champs obligatoire (dans ce contexte les indices de 0 à 3 de tabInput)
+       // et qui rajoute les champs fautifs à la chaîne de caractères.
        for(var i = 0; i < 3;i++)
        {
-           if(xd[i].value === '')
+           if(tabInput[i].value === '')
            {
                problem = true;
                if(i==0)
@@ -45,16 +50,13 @@ $(document).ready(function() {
                    prob+= "La date"
            }
         }
-       if(problem)
+       if(problem) //Vérification de la variable problem (true si l'utilisateur à commis une erreur de saisie)
        {
-           alert(prob);
-           event.preventDefault();
+           alert(prob); //Alerte de la page à l'utilisateur avec les erreurs commises (définies en majeur partie dans la boucle *for* ci-haute)
+           event.preventDefault(); //Prévention de l'envoie du form
        }
        else
            alert("Le formualaire a bien été remplis...")
-
-
-
    });
 
     //Fonction qui remplit la table en fonction de la variable data
