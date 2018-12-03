@@ -75,6 +75,11 @@ form div textarea
 td:first-child, td:last-child{
     text-align: center;
 }
+
+#map{
+    height: 400px;
+    width: 70%;
+}
 /*------------------------- Fin contenu -------------------------*/
 
 /*------------------------- Début menu -------------------------*/
@@ -141,8 +146,3 @@ nav.listMenu
     background-color: black;
 }
 /*------------------------- Fin menu -------------------------*/
-
-#map{
-    height: 400px;
-    width: 70%;
-}
