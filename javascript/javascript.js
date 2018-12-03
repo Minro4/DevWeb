@@ -1,3 +1,6 @@
+/*Demander au prof si il aime mieu que lon enregistre les donné dans une variable
+sur le client ou si il aime mieu que lon face un requete pour chaque changement(recherche sort etc)
+*/
 var data=[{"order":1,"activity":"Natation","manager":"Michel Provencher","numofsub":7},
 {"order":2,"activity":"Badminton","manager":"Daniel Lefevbre","numofsub":15},
 {"order":3,"activity":"Randonnée","manager":"Catherine Pelletier","numofsub":10},
@@ -56,14 +59,35 @@ $(document).ready(function() {
            event.preventDefault(); //Prévention de l'envoie du form
        }
        else
-           alert("Le formualaire a bien été remplis...")
+           alert("Le formulaire a bien été remplis...")
    });
 
     //Fonction qui remplit la table en fonction de la variable data
     function fillTable(){
+
+
             for (var i = 0; i < data.length; i++) {     //loop dans toutes les rows
                 tr = table.append("<tr><td>"+ data[i]["order"] +"</td><td>"+ data[i]["activity"] +"</td><td>"+ data[i]["manager"] +"</td><td>"+ data[i]["numofsub"] +"</td></tr>");
             }
+    }
+
+    //Fonction qui va cherche les informations de la base de donné
+    function GetDBData(){
+        $.ajax({
+            type: "POST",
+            url: "dataBase.php ",
+            data: {order: "ASC"},
+            success: function(response) {
+             response = JSON.parse(response);
+            },
+            error: function(response) {
+            // en cas d’erreur
+            },
+            complete: function() {
+             // appele au retour après succes ou error
+            // exécuté toujours : echech/succes
+            }
+           });
     }
 
     //Fonction qui s'occupe de tri le tableau data en fonction de la colonne
