@@ -72,6 +72,43 @@
                     <th>Responsable</th>
                     <th>Nombre d'inscrits</th>
                 </tr>
+                <?php
+                $obj_mysqli	=	new	mysqli("localhost",	"root",	"",	"site");
+                if	($obj_mysqli->connect_errno)	{
+                    echo	"Echec	lors	de	la	connexion	à MySQL	:	(".$obj_mysqli-> connect_errno.")	"	
+                    .$obj_mysqli->connect_error;
+                }
+                mysqli_set_charset($obj_mysqli,"utf8");
+                $request = "SELECT activity.id, 
+                                activity.activityname, 
+                                supervisor.fullname, 
+                                COUNT(member.id) as nbrOfSub
+                            FROM supervisor 
+                            LEFT JOIN activity ON (activity.id = supervisor. activityid)
+                            LEFT JOIN member ON (member.activityid = activity.id)
+                            GROUP BY activity.id";
+
+                $resultats = $obj_mysqli->query($request);
+
+                $array = array();
+                while ($row = $resultats->fetch_assoc()) {
+                    echo "<tr><td>$row[id]</td> 
+                    <td>$row[activityname]</td>
+                    <td>$row[fullname]</td>
+                    <td>$row[nbrOfSub]</td>
+                    </tr>";
+
+                    
+                    array_push($array, array(
+                        'order' => $row['id'],
+                        'activity' =>  $row['activityname'],
+                        'manager' => $row['fullname'],
+                        'numofsub' => $row['nbrOfSub']                      
+                    )); 
+
+                }
+                echo"<script type='text/javascript'> setData('".json_encode($array)."'); </script>";
+                ?>
             </table>
         </section>
     </article>
