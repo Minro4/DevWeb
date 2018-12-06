@@ -4,28 +4,29 @@ if	($obj_mysqli->connect_errno)	{
     echo	"Echec	lors	de	la	connexion	à MySQL	:	(".$obj_mysqli-> connect_errno.")	"	
     .$obj_mysqli->connect_error;
 }
+mysqli_set_charset($obj_mysqli,"utf8");
+
+
 $request = "SELECT activity.id, 
                 activity.activityname, 
                 supervisor.fullname, 
                 COUNT(member.id) as nbrOfSub
             FROM supervisor 
             LEFT JOIN activity ON (activity.id = supervisor. activityid)
-            LEFT JOIN member ON (member.activityid = activity.id)
+            LEFT JOIN member ON (member.activityid = activity.id)           
+            WHERE activity.activityname LIKE '".$_POST['search']."%'
             GROUP BY activity.id";
-
-//$request = "SELECT * FROM activity ";
 
 $resultats = $obj_mysqli->query($request);
 
-
 $array = array();
 while ($row = $resultats->fetch_assoc()) {
-
-    $e['order'] = $row['id'];
-    $e['activity'] =  $row['activityname'];
-    $e['manager'] = $row['fullname'];
-    $e['numofsub'] = $row['nbrOfSub'];
-    array_push($array, $e); 
+    array_push($array, array(
+        'order' => $row['id'],
+        'activity' =>  $row['activityname'],
+        'manager' => $row['fullname'],
+        'numofsub' => $row['nbrOfSub']    
+    )); 
 }
 
 echo json_encode($array);

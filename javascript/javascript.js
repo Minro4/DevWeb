@@ -6,7 +6,11 @@ var data;
 
 $(document).ready(function() {
     table = $("table");
-
+    
+    $('#searchForm').submit( function(e) {     
+        e.preventDefault();
+        search($('input[name = searchText]').val());
+    });
     $("th").click( function() { //Quand tu click sur une des colonnes de la table
         sortData(data,event.target.cellIndex);
         $("tr:not(tr:first-child)").remove(); //Enlève toutes les rows sauf la première
@@ -23,7 +27,7 @@ $(document).ready(function() {
     });
 
     //Fait la vérification du form
-    $("form").submit(function(event)
+    $("#inscription form").submit(function(event)
    {
        //Tableau des inputs du form
        var tabInput = $("input");
@@ -66,18 +70,19 @@ $(document).ready(function() {
     }
 
     //Fonction qui va cherche les informations de la base de donné
-    function GetDBData(){
+    function search(texte){
         $.ajax({
             type: "POST",
-            url: "dataBase.php",
+            url: "search.php",
+            data: {search: texte},
             success: function(response) {
-                alert(response);
                 response = JSON.parse(response); 
-                data = response;     
+                data = response;    
+
+                $("tr:not(tr:first-child)").remove(); //enleve tous les rangées
                 fillTable();        
             },
             error: function(response) {
-              
             },
             complete: function() {
              // appele au retour après succes ou error
@@ -142,13 +147,10 @@ $(document).ready(function() {
             });
 
         }
-    }
-
-   
+    }  
 });
 function setData(array){  
     data = JSON.parse(array);
-    alert("oh shit");
 }
  //Script qui s'occupe d'initialiser la carte
  function initMap() {

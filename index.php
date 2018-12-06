@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title> "Devoir"</title>
     <link rel="stylesheet" href="CSS/Devoir.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type ="text/javascript" src=" http://code.jquery.com/jquery.min.js">  </script>
     <script src = "javascript/javascript.js">	</script>
     <script async defer
@@ -63,7 +64,11 @@
 
         <!--Tableau des activités, des responsables et du nombre de personnes inscrites.-->
         <section>
-            <h1>Liste des activités disponibles :</h1>
+            <h1 id = "titreTableau">Liste des activités disponibles :</h1>
+            <form id = 'searchForm'>
+                    <input type="text" placeholder="Recherche.." name = 'searchText' >
+                    <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
             <table>
                 <tr>
                     <!--ligne 1 (titres des colonnes)-->
@@ -73,12 +78,14 @@
                     <th>Nombre d'inscrits</th>
                 </tr>
                 <?php
+                //Connection
                 $obj_mysqli	=	new	mysqli("localhost",	"root",	"",	"site");
                 if	($obj_mysqli->connect_errno)	{
                     echo	"Echec	lors	de	la	connexion	à MySQL	:	(".$obj_mysqli-> connect_errno.")	"	
                     .$obj_mysqli->connect_error;
                 }
                 mysqli_set_charset($obj_mysqli,"utf8");
+
                 $request = "SELECT activity.id, 
                                 activity.activityname, 
                                 supervisor.fullname, 
@@ -90,15 +97,16 @@
 
                 $resultats = $obj_mysqli->query($request);
 
-                $array = array();
+                $array = array(); //table qui va contenir chaque ligne du résultat
                 while ($row = $resultats->fetch_assoc()) {
+                    //Creer le tableau
                     echo "<tr><td>$row[id]</td> 
                     <td>$row[activityname]</td>
                     <td>$row[fullname]</td>
                     <td>$row[nbrOfSub]</td>
                     </tr>";
 
-                    
+                    //Ajoute chaque ligne du résultat dans la table
                     array_push($array, array(
                         'order' => $row['id'],
                         'activity' =>  $row['activityname'],
@@ -107,6 +115,7 @@
                     )); 
 
                 }
+                //Enregistre le tableau dans une variable js pour pemettre le trie.
                 echo"<script type='text/javascript'> setData('".json_encode($array)."'); </script>";
                 ?>
             </table>
