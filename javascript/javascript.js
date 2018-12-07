@@ -21,7 +21,7 @@ $(document).ready(function() {
         affichage(event.target.id);
       });
 
-    $("li").click(function(){   //Quand tu click sur un des éléments du menu ajoute la classe selected et l'enlève aux autres éléments du menu
+    $(".listMenu li").click(function(){   //Quand tu click sur un des éléments du menu ajoute la classe selected et l'enlève aux autres éléments du menu
         $("li").removeClass("selected");
         $(this).addClass("selected");
     });
@@ -156,5 +156,5 @@ function setData(array){
  function initMap() {
     var uluru = {lat: 46.347154, lng: -72.576881};
     var map = new google.maps.Map(document.getElementById('map'), {zoom: 12, center: uluru});
-    var marker = new google.maps.Marker({position: UQTR, map: map});
+    var marker = new google.maps.Marker({position: uluru, map: map});
 }
