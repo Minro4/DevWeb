@@ -21,12 +21,12 @@ $resultats = $obj_mysqli->query($request);
 
 $array = array();
 while ($row = $resultats->fetch_assoc()) {
-    array_push($array, array(
+    $array[] = array(
         'order' => $row['id'],
         'activity' =>  $row['activityname'],
         'manager' => $row['fullname'],
         'numofsub' => $row['nbrOfSub']    
-    )); 
+    ); 
 }
 
 echo json_encode($array);

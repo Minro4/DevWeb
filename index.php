@@ -107,12 +107,12 @@
                     </tr>";
 
                     //Ajoute chaque ligne du résultat dans la table
-                    array_push($array, array(
+                    $array[]= array(
                         'order' => $row['id'],
                         'activity' =>  $row['activityname'],
                         'manager' => $row['fullname'],
                         'numofsub' => $row['nbrOfSub']                      
-                    )); 
+                    ); 
 
                 }
                 //Enregistre le tableau dans une variable js pour pemettre le trie.
