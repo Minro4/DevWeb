@@ -14,6 +14,7 @@ if(!isset($_SESSION['lang']))
     <meta charset="UTF-8">
     <title> "Devoir"</title>
     <link rel="stylesheet" href="CSS/Devoir.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type ="text/javascript" src=" http://code.jquery.com/jquery.min.js">  </script>
     <script src = "javascript/javascript.js">	</script>
     <script async defer
@@ -77,6 +78,10 @@ if(!isset($_SESSION['lang']))
     <!--Tableau des activités, des responsables et du nombre de personnes inscrites.-->
     <section>
         <h1><?php echo $dicto['TitreListeActi'] ?></h1>
+        <form id = 'searchForm'>
+                    <input type="text" placeholder="Recherche.." name = 'searchText' >
+                    <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
         <table>
             <tr>
                 <!--ligne 1 (titres des colonnes)-->
