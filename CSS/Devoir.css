@@ -80,6 +80,24 @@ td:first-child, td:last-child{
     height: 400px;
     width: 70%;
 }
+
+#searchForm{
+    float: right;
+    margin-bottom: 10px;
+    margin-right: -28px;
+}
+#searchForm input{
+    width: 20em;
+}
+#searchForm button{
+    position: relative;
+    right: 28px;
+    background-color: rgba(0, 0, 0,0);
+    border: none;
+}
+#titreTableau{
+    display: inline;
+}
 /*------------------------- Fin contenu -------------------------*/
 
 /*------------------------- Début menu -------------------------*/

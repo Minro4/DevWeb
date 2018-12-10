@@ -1,18 +1,16 @@
 /*Demander au prof si il aime mieu que lon enregistre les donné dans une variable
 sur le client ou si il aime mieu que lon face un requete pour chaque changement(recherche sort etc)
 */
-var data=[{"order":1,"activity":"Natation","manager":"Michel Provencher","numofsub":7},
-{"order":2,"activity":"Badminton","manager":"Daniel Lefevbre","numofsub":15},
-{"order":3,"activity":"Randonnée","manager":"Catherine Pelletier","numofsub":10},
-{"order":4,"activity":"Kayak","manager":"Josée Coté","numofsub":14},
-{"order":5,"activity":"Velo","manager":"Jean-Yves Surroy","numofsub":22},
-{"order":6,"activity":"Echecs","manager":"Emilie Simard","numofsub":11}];
 var table;
+var data;
 
 $(document).ready(function() {
     table = $("table");
-    fillTable();
-
+    
+    $('#searchForm').submit( function(e) {     
+        e.preventDefault();
+        search($('input[name = searchText]').val());
+    });
     $("th").click( function() { //Quand tu click sur une des colonnes de la table
         sortData(data,event.target.cellIndex);
         $("tr:not(tr:first-child)").remove(); //Enlève toutes les rows sauf la première
@@ -23,13 +21,13 @@ $(document).ready(function() {
         affichage(event.target.id);
       });
 
-    $("li").click(function(){   //Quand tu click sur un des éléments du menu ajoute la classe selected et l'enlève aux autres éléments du menu
+    $(".listMenu li").click(function(){   //Quand tu click sur un des éléments du menu ajoute la classe selected et l'enlève aux autres éléments du menu
         $("li").removeClass("selected");
         $(this).addClass("selected");
     });
 
     //Fait la vérification du form
-    $("form").submit(function(event)
+    $("#inscription form").submit(function(event)
    {
        //Tableau des inputs du form
        var tabInput = $("input");
@@ -72,16 +70,19 @@ $(document).ready(function() {
     }
 
     //Fonction qui va cherche les informations de la base de donné
-    function GetDBData(){
+    function search(texte){
         $.ajax({
             type: "POST",
-            url: "dataBase.php ",
-            data: {order: "ASC"},
+            url: "search.php",
+            data: {search: texte},
             success: function(response) {
-             response = JSON.parse(response);
+                response = JSON.parse(response); 
+                data = response;    
+
+                $("tr:not(tr:first-child)").remove(); //enleve tous les rangées
+                fillTable();        
             },
             error: function(response) {
-            // en cas d’erreur
             },
             complete: function() {
              // appele au retour après succes ou error
@@ -146,11 +147,14 @@ $(document).ready(function() {
             });
 
         }
-    }
+    }  
 });
+function setData(array){  
+    data = JSON.parse(array);
+}
  //Script qui s'occupe d'initialiser la carte
  function initMap() {
     var uluru = {lat: 46.347154, lng: -72.576881};
     var map = new google.maps.Map(document.getElementById('map'), {zoom: 12, center: uluru});
-    var marker = new google.maps.Marker({position: UQTR, map: map});
+    var marker = new google.maps.Marker({position: uluru, map: map});
 }
