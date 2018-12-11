@@ -26,6 +26,19 @@ if(!isset($_SESSION['lang']))
 <Header>
     <!-------L'entête------->
     <h1><?php echo $dicto['Entête'] ?></h1>
+    <form id = "langue" action="switch.php">
+        <input type="submit" value=<?php
+
+        if($_SESSION['lang'] == "fr"){
+
+            echo "Anglais";
+        }
+        else{
+            echo "French";
+        }
+
+        ?>>
+    </form>
 </Header>
 <nav class="listMenu">   <!-------Menu de navigation------->
     <ul>
@@ -50,9 +63,6 @@ if(!isset($_SESSION['lang']))
     </ul>
 </nav>
 
-<form action="switch.php">
-    <input type="submit" value=<?php echo $_SESSION['lang']?>>
-</form>
 <!------- Contenu ------->
 <!------- Accueil ------->
 <article id = "accueil">
@@ -179,6 +189,9 @@ if(!isset($_SESSION['lang']))
         <input type ="reset" value = <?php echo $dicto['fReinitialiser'] ?>/>
     </form>
 </article>
+
+
+
 </body>
 
 <?php

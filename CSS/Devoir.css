@@ -37,6 +37,14 @@ article{
 article:first-of-type{
     display:block;
 }
+
+#langue{
+    display: inline-block;
+    postion: absolute;
+    bottom:0;
+
+}
+
 table{
     width: 100%;
     white-space:nowrap;
