@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 03 déc. 2018 à 20:36
+-- Généré le :  mar. 11 déc. 2018 à 14:04
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `dictionary` (
   `en` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `fr` text COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `dictionary`
@@ -85,7 +85,11 @@ INSERT INTO `dictionary` (`id`, `word_key`, `en`, `fr`) VALUES
 (15, 'fReinitialiser', 'Reset', 'Réinitialiser'),
 (16, 'tActivite', 'Activity', 'Activité'),
 (17, 'tResponsable', 'Manager', 'Responsable'),
-(18, 'tNbrInscrits', 'Number of subscriber', 'Nombre d\'inscrits');
+(18, 'tNbrInscrits', 'Number of subscriber', 'Nombre d\'inscrits'),
+(19, 'titre', 'Homework', 'Devoir'),
+(22, 'Entête', 'Leisure for students!', 'Loisirs pour les étudiants!'),
+(23, 'fM', 'Man', 'Homme'),
+(24, 'fF', 'Woman', 'Femme');
 
 -- --------------------------------------------------------
 
