@@ -30,7 +30,7 @@ $(document).ready(function() {
     $("#inscription form").submit(function(event)
    {
        //Tableau des inputs du form
-       var tabInput = $("input");
+       var tabInput = $("#inscription form input");
        //String qui avertit l'utilisateur des erreurs commises
        var prob = "LES CHAMPS OBLIGATOIRES CI-DESSOUS N'ONT PAS ÉTÉ REMPLIS\n";
        //Boolean verifiant s'il y a un probleme
@@ -147,9 +147,9 @@ $(document).ready(function() {
             });
 
         }
-    }  
+    }
 });
-function setData(array){  
+function setData(array){
     data = JSON.parse(array);
 }
  //Script qui s'occupe d'initialiser la carte
@@ -157,4 +157,23 @@ function setData(array){
     var uluru = {lat: 46.347154, lng: -72.576881};
     var map = new google.maps.Map(document.getElementById('map'), {zoom: 12, center: uluru});
     var marker = new google.maps.Marker({position: uluru, map: map});
+}
+
+function setOption(){
+
+ var docSel = document.getElementById("sel");
+
+   for(var i = 0; i < data.length;i ++){
+
+       var elem = document.createElement("option");
+
+       elem.text = data[i]['activity'];
+
+       elem.value = data[i]['order']
+
+       docSel.add(elem);
+   }
+
+
+
 }

@@ -1,9 +1,7 @@
-<?php
-$obj_mysqli	=	new	mysqli("localhost",	"user",	"password",	"database");
-if	($obj_mysqli->connect_errno)	{
-    echo	"Echec	lors	de	la	connexion	à MySQL	:	(".$obj_mysqli-> connect_errno.")	"	
-    .$obj_mysqli->connect_error;
-}
+<?php include("functions.php");
+
+$obj_mysqli	= setConnexion();
+
 $request = "SELECT activity.id, 
                 activity.activityname, 
                 supervisor.fullname, 

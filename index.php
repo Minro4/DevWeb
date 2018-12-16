@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php
+<?php include("functions.php");
 session_start();
 if(!isset($_SESSION['lang']))
 {
@@ -136,7 +136,7 @@ if(!isset($_SESSION['lang']))
             //Enregistre le tableau dans une variable js pour pemettre le trie.
             echo"<script type='text/javascript'> setData('".json_encode($array)."'); </script>";
             ?>
-
+            <script type='text/javascript'> setOption() </script>
         </table>
     </section>
 </article>
@@ -149,7 +149,7 @@ if(!isset($_SESSION['lang']))
 <!--fin carte-->
 <!--Inscription-->
 <article id = "inscription">
-    <form>
+    <form action="serveur.php" method="POST">
         <h1><?php echo $dicto['TitreInscrire'] ?></h1>
         <div>
             <label><?php echo $dicto['fNom'] ?></label>
@@ -161,32 +161,27 @@ if(!isset($_SESSION['lang']))
         </div>
         <div>
             <label><?php echo $dicto['fDate'] ?></label>
-            <input type="date" size="20"/>
+            <input type="date" name ="date" size="20"/>
         </div>
         <div>
             <label><?php echo $dicto['fSexe'] ?></label>
-            <input type="radio" name = "gender" value = "Homme" checked/>
+            <input type="radio" name = "gender" value = 0 checked/>
             <label><?php echo $dicto['fM'] ?></label>
-            <input type="radio" name = "gender" value = "Femme" />
+            <input type="radio" name = "gender" value = 1 />
             <label><?php echo $dicto['fF'] ?></label>
         </div>
         <div>
             <label for = "sel"><?php echo $dicto['fActivite'] ?></label>
             <select name ="Activité" id="sel">
-                <option>Natation</option>
-                <option>Batminton</option>
-                <option>Rendonnée</option>
-                <option>Kayak</option>
-                <option>Velo</option>
-                <option value>Echecs</option>
+
             </select>
         </div>
         <div>
             <label for = "motiv">Motivation </label>
-            <textarea value = "comments" id="motiv" rows ="4" cols = "50" placeholder="Facultatif"></textarea>
+            <textarea value = "comments" name="commentaire" id="motiv" rows ="4" cols = "50" placeholder="Facultatif"></textarea>
         </div>
-        <input type ="submit" value = <?php echo $dicto['fSoumettre'] ?>/>
-        <input type ="reset" value = <?php echo $dicto['fReinitialiser'] ?>/>
+        <input type ="submit" value = <?php echo $dicto['fSoumettre'] ?>>
+        <input type ="reset" value = <?php echo $dicto['fReinitialiser'] ?>>
     </form>
 </article>
 
@@ -194,34 +189,3 @@ if(!isset($_SESSION['lang']))
 
 </body>
 
-<?php
-
-function setConnexion(){
-
-    $obj_mysqli	=	new	mysqli("localhost",	"root",	"",	"site");
-
-    if	($obj_mysqli->connect_errno) {
-        echo "Echec	lors	de	la	connexion	à MySQL	:	(" . $obj_mysqli->connect_errno . ")	"
-            . $obj_mysqli->connect_error;
-    }
-
-    mysqli_set_charset($obj_mysqli,"utf8");
-
-    return  $obj_mysqli;
-}
-function setDico($langTrad)
-{
-
-    $dico = array();
-
-    $connex = setConnexion();
-
-    $resultats = $connex -> query("SELECT word_key , $langTrad FROM dictionary");
-
-    while ($row = $resultats->fetch_assoc())
-    {
-        $dico[$row['word_key']] = $row[$langTrad];
-    }
-    return $dico;
-}
-?>
