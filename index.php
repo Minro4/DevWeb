@@ -136,7 +136,7 @@ if(!isset($_SESSION['lang']))
             //Enregistre le tableau dans une variable js pour pemettre le trie.
             echo"<script type='text/javascript'> setData('".json_encode($array)."'); </script>";
             ?>
-            <script type='text/javascript'> setOption() </script>
+
         </table>
     </section>
 </article>
@@ -173,7 +173,7 @@ if(!isset($_SESSION['lang']))
         <div>
             <label for = "sel"><?php echo $dicto['fActivite'] ?></label>
             <select name ="Activité" id="sel">
-
+                <script type='text/javascript' src = 'javascript/javascript.js'> setOption() </script>
             </select>
         </div>
         <div>

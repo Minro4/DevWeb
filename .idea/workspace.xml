@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="610f8f47-76c2-4d65-a5a8-7baf0669fe58" name="Default Changelist" comment="continuation de mes affaires genre form, me reste de javascript dab haters un peu a faire">
-      <change afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serveur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javascript/javascript.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/javascript.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +98,7 @@
           <entry key="css" value="261" />
           <entry key="html" value="834" />
           <entry key="js" value="2722" />
-          <entry key="php" value="2317" />
+          <entry key="php" value="2321" />
           <entry key="txt" value="127" />
         </counts>
       </usages-collector>
@@ -112,7 +107,7 @@
           <entry key="CSS" value="263" />
           <entry key="HTML" value="834" />
           <entry key="JavaScript" value="2720" />
-          <entry key="PHP" value="2317" />
+          <entry key="PHP" value="2321" />
           <entry key="PLAIN_TEXT" value="127" />
         </counts>
       </usages-collector>
@@ -184,20 +179,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javascript/javascript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="171" column="36" lean-forward="true" selection-start-line="171" selection-start-column="36" selection-end-line="171" selection-end-column="36" />
+            <state relative-caret-position="221">
+              <caret line="161" column="18" selection-start-line="161" selection-start-column="9" selection-end-line="161" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="152" column="54" lean-forward="true" selection-start-line="152" selection-start-column="54" selection-end-line="152" selection-end-column="54" />
+            <state relative-caret-position="272">
+              <caret line="175" column="79" selection-start-line="175" selection-start-column="79" selection-end-line="175" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -230,9 +225,9 @@
         <option value="$PROJECT_DIR$/CSS/Devoir.css" />
         <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/dataBase.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/serveur.php" />
         <option value="$PROJECT_DIR$/javascript/javascript.js" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -282,7 +277,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544997962662" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544998254996" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ounon" />
   </component>
   <component name="RecentsManager">
@@ -332,7 +327,7 @@
       <workItem from="1544458896308" duration="7722000" />
       <workItem from="1544471069349" duration="1628000" />
       <workItem from="1544629095800" duration="18285000" />
-      <workItem from="1544996573238" duration="1385000" />
+      <workItem from="1544996573238" duration="1675000" />
     </task>
     <task id="LOCAL-00001" summary="debut du form">
       <created>1541630286702</created>
@@ -345,11 +340,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67341000" />
+    <option name="totallyTimeSpent" value="67631000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.103355706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -457,13 +451,6 @@
     <entry file="file://$PROJECT_DIR$/form.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="152" column="54" lean-forward="true" selection-start-line="152" selection-start-column="54" selection-end-line="152" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -480,8 +467,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/javascript/javascript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="171" column="36" lean-forward="true" selection-start-line="171" selection-start-column="36" selection-end-line="171" selection-end-column="36" />
+        <state relative-caret-position="221">
+          <caret line="161" column="18" selection-start-line="161" selection-start-column="9" selection-end-line="161" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="175" column="79" selection-start-line="175" selection-start-column="79" selection-end-line="175" selection-end-column="79" />
         </state>
       </provider>
     </entry>
