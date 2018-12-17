@@ -5,6 +5,7 @@ var table;
 var data;
 
 $(document).ready(function() {
+
     table = $("table");
     
     $('#searchForm').submit( function(e) {     
@@ -160,11 +161,9 @@ function setData(array){
 }
 
 function setOption(){
-
  var docSel = document.getElementById("sel");
 
    for(var i = 0; i < data.length;i ++){
-
        var elem = document.createElement("option");
 
        elem.text = data[i]['activity'];
@@ -173,7 +172,4 @@ function setOption(){
 
        docSel.add(elem);
    }
-
-
-
 }

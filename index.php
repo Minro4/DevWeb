@@ -172,8 +172,8 @@ if(!isset($_SESSION['lang']))
         </div>
         <div>
             <label for = "sel"><?php echo $dicto['fActivite'] ?></label>
-            <select name ="Activité" id="sel">
-                <script type='text/javascript' src = 'javascript/javascript.js'> setOption() </script>
+            <select name ="Activite" id="sel">
+                <script type='text/javascript'> setOption() </script>
             </select>
         </div>
         <div>
