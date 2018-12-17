@@ -13,10 +13,10 @@ if(!isset($_SESSION['lang']))
 <head>
     <meta charset="UTF-8">
     <title> "Devoir"</title>
-    <link rel="stylesheet" href="CSS/Devoir.css" type="text/css" />
+    <link rel="stylesheet" href="../CSS/Devoir.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type ="text/javascript" src=" http://code.jquery.com/jquery.min.js">  </script>
-    <script src = "javascript/javascript.js">	</script>
+    <script src = "../javascript/javascript.js">	</script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvRPJsEiFbZCDmOHDDTTjQuXeRB1mUEQQ&callback=initMap">
     </script>

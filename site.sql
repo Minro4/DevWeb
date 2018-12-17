@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 11 déc. 2018 à 14:04
+-- Généré le :  lun. 17 déc. 2018 à 19:53
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -100,13 +100,24 @@ INSERT INTO `dictionary` (`id`, `word_key`, `en`, `fr`) VALUES
 DROP TABLE IF EXISTS `member`;
 CREATE TABLE IF NOT EXISTS `member` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `fullname` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fullname` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
   `dob` date NOT NULL,
   `sex` int(11) NOT NULL,
   `activityid` int(11) NOT NULL,
   `motivation` text COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `member`
+--
+
+INSERT INTO `member` (`id`, `fullname`, `dob`, `sex`, `activityid`, `motivation`) VALUES
+(1, 'test', '2018-12-25', 0, 1, 'sad'),
+(2, 'SDF', '2018-12-04', 0, 1, ''),
+(3, 'DFG', '2018-12-26', 0, 2, ''),
+(4, 'testcaca', '2015-01-01', 0, 0, ''),
+(5, 't c', '2015-01-01', 0, 0, '');
 
 -- --------------------------------------------------------
 
